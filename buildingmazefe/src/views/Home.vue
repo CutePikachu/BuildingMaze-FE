@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home"
+  	   :style="{ backgroundImage: 'url(' + require('@/assets/homebackground.png') + ')' }">
+    <img alt="Vue logo" src="../assets/logo.png" height="100" width="100">
+    <HelloWorld msg="Welcome to Building Maze! Enjoy!"/>
   </div>
 </template>
 
@@ -16,3 +17,4 @@ export default {
   }
 }
 </script>
+

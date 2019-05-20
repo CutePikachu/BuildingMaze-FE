@@ -1,1 +1,1 @@
-# BuildingMazw
+# BuildingMaze

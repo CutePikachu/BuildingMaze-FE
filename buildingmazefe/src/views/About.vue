@@ -1,5 +1,6 @@
 <template>
-  <div class="about">
-    <h1>Try it out yourself!</h1>
+  <div>
+    <h1 align="left">Rules</h1>
+
   </div>
 </template>

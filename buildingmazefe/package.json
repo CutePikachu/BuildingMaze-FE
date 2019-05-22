@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "muse-ui": "^3.0.2",
+    "muse-ui-carbon-theme": "^0.1.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
@@ -19,6 +21,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "less-loader": "^5.0.0",
     "vue-template-compiler": "^2.5.21"
   }
 }

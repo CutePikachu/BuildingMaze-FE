@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id = "board">
     <div class = "row"
          v-for="row in array" >
@@ -17,8 +17,8 @@
     name: 'board',
     data() {
       return {
-      	array : [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9],
-      	color : [[], [], [], [], [], [], [], [], [], []]
+        array : [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9],
+        color : [[], [], [], [], [], [], [], [], [], []]
       }
       
     },
@@ -33,6 +33,7 @@
       }
     }
   }
+  
 </script>
 
 <style scoped>
@@ -59,4 +60,4 @@
   height: 150px;
   }
 
-</style>
+</style> -->

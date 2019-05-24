@@ -1,18 +1,25 @@
 <template>
   <div align="center">
     <h1>{{ msg }}</h1><br>
-    <mu-ripple class="murip"> Login   </mu-ripple><br>
-    <mu-ripple class="murip"> Register</mu-ripple>
+    <mu-ripple class="murip"> Quick Start</mu-ripple><br>
+    <mu-ripple class="murip" @click="login"> Login  </mu-ripple><br>
+    <mu-ripple class="murip"> Register   </mu-ripple>
+    <router-view/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  export default {
+    name: 'HelloWorld',
+    props: {
+      msg: String
+    },
+    methods: {
+      login: function() {
+        this.$router.push({path:'/login'})
+      }
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

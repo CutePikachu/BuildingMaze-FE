@@ -11,29 +11,25 @@ import 'muse-ui/dist/muse-ui.css';
 
 Vue.use(MuseUI);
 
-import Helpers from 'muse-ui/lib/Helpers';
-Vue.use(Helpers);
+//axios
+import axios from 'axios'
 
-// import Toast from 'muse-ui-toast';
-// Vue.use(Toast);
+Vue.use({
+  install (Vue) {
+  	Vue.prototype.$api = axios.create({
+			baseURL:'http://localhost:8000/api/v1'
+		})
+  }
+})
 
-// import Message from 'muse-ui-message';
-// Vue.use(Message);
+//import vuex
+import Vuex from 'vuex'
+import store from './vuex/store'
 
-// import Loading from 'muse-ui-loading';
-// Vue.use(Loading);
-
-// import theme from 'muse-ui/lib/theme';
-// theme.add('bm', {
-//   primary: '#673ab7',
-//   secondary: '#b39ddb',
-//   success: '#66bb6a',
-//   warning: '#ff3d00'
-// }, 'light');
-
-// theme.use('bm');
+Vue.use(Vuex)
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

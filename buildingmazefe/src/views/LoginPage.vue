@@ -1,5 +1,6 @@
 <template>
   <div id="LoginPage" @click="login">
+    <Topbar />
     <div class = "input">
       <h1 class = "title">Welcome</h1>
       <input placeholder="Username"
@@ -29,8 +30,12 @@
   import axios from 'axios';
   axios.defaults.withCredentials = true;
 
+  import Topbar from '@/components/Topbar.vue'
   export default {
     name: 'LoginPage',
+    components: {
+      Topbar
+    },
     data () {
       return {
         username: "",
@@ -71,10 +76,10 @@
         }
         //http request challenge
         that.blocked = true;
-        axios.get('/v1/indenty/' + that.username)
+        axios.get('/login/' + that.username)
           .then(function(resp) {
             let pwd = that.password;
-            axios.post('/v1/indentity/', Qs.stringify({'password': pwd}))//needs refactoring
+            axios.post('/login/', Qs.stringify({'password': pwd}))//needs refactoring
               .then(function(resp) {
                 if (resp.data.Success) {
                   that.message("Login successfully. Loading...", "#2E571F");

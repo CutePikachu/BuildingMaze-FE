@@ -1,7 +1,7 @@
 <template>
   <div align="center">
     <h1>{{ msg }}</h1><br>
-    <mu-ripple class="murip"> Quick Start</mu-ripple><br>
+    <mu-ripple class="murip" @click="start"> Quick Start</mu-ripple><br>
     <mu-ripple class="murip" @click="login"> Login  </mu-ripple><br>
     <mu-ripple class="murip"> Register   </mu-ripple>
     <router-view/>
@@ -17,6 +17,9 @@
     methods: {
       login: function() {
         this.$router.push({path:'/login'})
+      },
+      start: function() {
+        this.$router.push({path:'/bm'})
       }
     }
   }

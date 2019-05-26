@@ -1,15 +1,15 @@
 <template>
   <div id = "board">
-    <div class = "row"
+    <div class="row"
          v-for="row in array" 
-         :key='row'>
+         :key=row>
       <div v-for="item in array"
-           :key='item'>
-        <div class = "col"
+           :key=item>
+        <div class = "item"
              @click="changeColor(row, item)"
              :class = "{newCol : color[row][item]}">
-             hi </div>
         </div>
+      </div>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@
 <script>
   import Vue from 'vue'
   export default {
-    name: 'board',
+    name: 'Board',
     data() {
       return {
         array : [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9],
@@ -40,27 +40,28 @@
 </script>
 
 <style scoped>
+  #board {
+    width: 100%;
+    height: 100%;
+    background-color: #7B8937;
+  }
+
   .row {
   background-color: #d4ebf4;
   display: flex;
-  width: 150px;
+  flex-direction: column;
+  width: 100%;
   height: 150px;
   }
 
-  .col {
+  .item {
   background-color: #d4ebf4;
-  display:flex;
-  flex-direction: column;
   width: 150px;
   height: 150px;
   }
 
   .newCol {
   background-color: #e1d4f4;
-  display:flex;
-  flex-direction: column;
-  width: 150px;
-  height: 150px;
   }
 
 </style>

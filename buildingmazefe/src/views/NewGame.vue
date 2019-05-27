@@ -1,11 +1,11 @@
 <template>
   <div id="newGame">
-  	<Board code="wwwwwwwwwwwwwwwsssswwswswswwswssswwsssswwwwwwsssswwwwsssswwsswwwwsssswsswwwsssswwswswsssss0swwwwwws0" level="1" />
+  	<Board code="wwwwwwwwwwwwwwwssssw5swswswwswssswwsssswwwwwsssss0wwwsssswwsswwwws3sswsswwwsssswwswswsssssdswwwwwwse" level="1" />
   </div>
 </template>
 
 <script>
-  import Board from '@/components/Board.vue'
+  import Board from '@/components/board.vue'
   export default {
   	name: 'NewGame',
   	components: {

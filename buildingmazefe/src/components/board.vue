@@ -5,18 +5,34 @@
          :key=row>
       <div v-for="item in array"
            :key=item>
-        <mu-ripple class = "item w"
+
+        <div class = "item w"
              @click="changeColor(row, item)"
+             elevation="20"
              v-if="type[row][item] === 'w'">
-        </mu-ripple>
-        <mu-ripple class = "item s"
+          <mu-ripple />
+        </div>
+
+        <div class = "item s"
              @click="changeColor(row, item)"
              v-else-if="type[row][item] === 's'">
-        </mu-ripple>
-        <mu-ripple class = "item newCol"
+          <mu-ripple />  
+        </div>
+
+        <div class = "item num"
+             @click="changeColor(row, item)"
+             v-else-if="type[row][item] <= '9' && type[row][item] >= '0'">
+           <mu-ripple >
+             {{ type[row][item] }}
+           </mu-ripple>
+        </div>
+
+        <div class = "item newCol"
              @click="changeColor(row, item)"
              v-else>
-        </mu-ripple>
+          <mu-ripple />   
+        </div>
+
       </div>
     </div>
   </div>
@@ -60,30 +76,40 @@
 </script>
 
 <style scoped>
-
+  #Board {
+    background-color: #e0dad5;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
   .row {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 130px;
+    width: 900px;
+    height: 90px;
   }
 
   .w {
-    
-    background-color: #9b8b81;
+    background-color: #3d1d03;
   }
 
   .s {
     border: none;
-    background-color: #cbf4dd;
+    background-color: #e0dad5;
   }
+
+  .num {
+    background-color: #ddcdf2;
+    font-size: 30px;
+    color: #4e06ad;
+  }
+
   .item{
     position: relative;
-    width: 137px;
-    height: 137px;
+    width: 90px;
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
 </style>

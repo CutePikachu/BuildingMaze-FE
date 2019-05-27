@@ -39,7 +39,7 @@ function dobfs(g, src, dest, visited, found) {
 	visited[src] = 1;//mark as visited
 	enqueue(queue, src);
 
-	while(!isEmpty(queue) && !found) {
+	while(!isEsmpty(queue) && !found) {
 		let curr = dequeue(queue);
 		for (let i = 0; i < visited.length; i++) {
 			if (visited[i] || !reachable(i, curr, g)) continue;

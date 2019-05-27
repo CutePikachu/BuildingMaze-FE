@@ -5,10 +5,10 @@
          :key=row>
       <div v-for="item in array"
            :key=item>
-        <div class = "item"
+        <mu-ripple class = "item"
              @click="changeColor(row, item)"
              :class = "{newCol : color[row][item]}">
-        </div>
+        </mu-ripple>
       </div>
     </div>
   </div>
@@ -47,21 +47,26 @@
   }
 
   .row {
-  background-color: #d4ebf4;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 150px;
-  }
-
-  .item {
-  background-color: #d4ebf4;
-  width: 150px;
-  height: 150px;
+    background-color: #d4ebf4;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 150px;
   }
 
   .newCol {
-  background-color: #e1d4f4;
+    background-color: #e1d4f4;
+  }
+
+  .item{
+    position: relative;
+    border: none;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d4ebf4;
   }
 
 </style>

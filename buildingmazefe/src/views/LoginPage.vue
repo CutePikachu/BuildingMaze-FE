@@ -130,7 +130,7 @@
     padding: 28px;
     border-radius: 25px;
     border: none;
-    background-color: #ede7f6;
+    background-color: #1ecfd6;
     height: 50px;
     width: 320px;
   } 
@@ -148,5 +148,11 @@
 
   .change::-webkit-input-placeholder {
     color: #ffffff;
+  }
+
+  #LoginPage {
+    width: 100%;
+    height: 100%;
+    background-color: #C7F6EC;
   }
 </style>

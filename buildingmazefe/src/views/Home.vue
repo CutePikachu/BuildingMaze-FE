@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
   	<Topbar />
     <img alt="Vue logo" src="../assets/logo.png" height="100" width="100">
     <Welcome msg="Welcome to Building Maze! Enjoy!"/>
@@ -19,3 +19,10 @@ export default {
 }
 </script>
 
+<style>
+  .home {
+    width: 100%;
+    height: 100%;
+    background-color: #C7F6EC;
+  }
+</style>

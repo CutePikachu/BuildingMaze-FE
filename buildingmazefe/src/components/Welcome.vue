@@ -1,9 +1,9 @@
 <template>
   <div align="center">
     <h1>{{ msg }}</h1><br>
-    <mu-ripple class="murip" @click="start"> Quick Start</mu-ripple><br>
-    <mu-ripple class="murip" @click="login"> Login  </mu-ripple><br>
-    <mu-ripple class="murip"> Register   </mu-ripple>
+    <mu-button class="mu-ripple" @click="start"> Quick Start</mu-button><br>
+    <mu-button class="mu-ripple" @click="login"> Login  </mu-button><br>
+    <mu-button class="mu-ripple" :opacity="0.3"> Register   </mu-button>
     <router-view/>
   </div>
 </template>
@@ -27,7 +27,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .murip {
+  .mu-ripple {
     position: relative;
     width: 350px;
     height: 80px;

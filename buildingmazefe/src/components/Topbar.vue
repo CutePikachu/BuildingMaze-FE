@@ -26,16 +26,16 @@
 }
 #nav {
   padding: 15px;
-  background-color: #d1c4e9;
+  background-color: #55D9C0;
   text-align: right;
 }
 
 #nav a {
   font-weight: bold;
-  color: #204177;
+  color: #107050;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #02231C;
 }
 </style>

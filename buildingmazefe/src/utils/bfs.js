@@ -18,6 +18,7 @@ adajcent
 */
 //------------------------------------------------
 
+import queue from './queue'
 
 function reachable(v, w, g) {
 	if (g[v].level != g[w].level) return false;
@@ -34,22 +35,22 @@ function bfs(graph, graphSize, src, dest) {
 }
 
 function dobfs(g, src, dest, visited, found) {
-	let queue = [];
+	let queue = newQueue();
 	visited[src] = 1;//mark as visited
-	queue.push(src);
+	enqueue(queue, src);
 
-	while(queue.length > 0 && !found) {
-		let curr = queue.shift();
+	while(!isEmpty(queue) && !found) {
+		let curr = dequeue(queue);
 		for (let i = 0; i < visited.length; i++) {
 			if (visited[i] || !reachable(i, curr, g)) continue;
 			else if (g[i].type == "w") visited[i] = 1;
 			else if (i == dest) found = 1;
 			else {
 				visited[i] = 1;
-				queue.push(i);
+				enqueue(queue, i);
 			}
 		}
 	}
-	queue = [];
+	emptyQueue(queue);
 	return found;
 }

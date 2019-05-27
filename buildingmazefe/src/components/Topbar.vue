@@ -1,9 +1,14 @@
 <template>
   <div id="bar">
     <div id="nav">
+      <img src="../assets/home.png" height="15" width="15"></img>
       <router-link to="/">Home       </router-link>  |
+      <img src="../assets/guide.png" height="15" width="15"></img>
       <router-link to="/about">Guide </router-link>  |
-      <router-link to="/login">Login </router-link>
+      <img src="../assets/person.png" height="15" width="15"></img>
+      <router-link to="/login">Login </router-link>  |
+      <img src="../assets/equalizer.png" height="15" width="15"></img>
+      <router-link to="/Rank">Rank  </router-link>
     </div>
     <router-view/>
   </div>

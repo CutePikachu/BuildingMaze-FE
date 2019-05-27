@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import LoginPage from './views/LoginPage.vue'
 import NewGame from './views/NewGame.vue'
+import Rank from './views/Rank.vue'
 //import Register from './views/Register.vue'
 
 Vue.use(Router)
@@ -33,6 +34,11 @@ export default new Router({
       path: '/bm',
       name: 'NewGame',
       component: NewGame
+    },
+    {
+      path: '/rank',
+      name: 'Rank',
+      component: Rank
     }
   ]
 })

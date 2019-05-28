@@ -32,8 +32,8 @@
              v-else>
           <mu-ripple />   
         </div>
-
       </div>
+      <h3 v-if="row===1" class="lev">You are on level  {{ level }}</h3>
     </div>
   </div>
 </template>
@@ -45,7 +45,6 @@
     props: ["code", "level"],
     data() {
       return {
-        curLevel: this.level,
         array : [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9],
         color : [[], [], [], [], [], [], [], [], [], []],
         type:   [[], [], [], [], [], [], [], [], [], []],
@@ -79,14 +78,16 @@
   #Board {
     background-color: #e0dad5;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    padding-top: 26px; 
+    width: 720px;
+    height: 720px;
   }
   .row {
     display: flex;
     flex-direction: column;
-    width: 900px;
-    height: 90px;
+    margin-left: 120px;
+    width: 720px;
+    height: 72px;
   }
 
   .w {
@@ -106,10 +107,14 @@
 
   .item{
     position: relative;
-    width: 90px;
-    height: 90px;
+    width: 72px;
+    height: 72px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .lev {
+    padding: 40px;
   }
 </style>

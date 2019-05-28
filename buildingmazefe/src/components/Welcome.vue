@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1><br>
     <mu-button class="mu-ripple" @click="start"> Quick Start</mu-button><br>
     <mu-button class="mu-ripple" @click="login"> Login  </mu-button><br>
-    <mu-button class="mu-ripple" :opacity="0.3"> Register   </mu-button>
+    <mu-button class="mu-ripple" @click="reg"> Register   </mu-button>
     <router-view/>
   </div>
 </template>
@@ -19,7 +19,10 @@
         this.$router.push({path:'/login'})
       },
       start: function() {
-        this.$router.push({path:'/bm'})
+        this.$router.push({path:'/choice'})
+      },
+      reg: function() {
+        this.$router.push({path:'/reg'})
       }
     }
   }

@@ -44,5 +44,15 @@ export default {
   .context {
     margin-left: 80px;
     margin-right: 80px;
+    position: relative;
+    animation-name: myanimation;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes myanimation {
+    0%   {top: 0px;}
+    50%  {top: 5px;}
+    100% {top: 10px;}
   }
 </style>

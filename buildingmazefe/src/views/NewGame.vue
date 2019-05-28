@@ -2,6 +2,7 @@
   <div id="newGame">
   	<Board code="wwwwwwwwwwwwwwwssssw5swswswwswssswwsssswwwwwsssss0wwwsssswwsswwwws3sswsswwwsssswwswswsssssdswwwwwwse" level="1" />
   </div>
+
 </template>
 
 <script>
@@ -13,3 +14,12 @@
   	}
   }
 </script>
+
+<style scoped>
+  #newGame {
+    background-color: #e0dad5;
+    width: 100vw;
+    height: 100vh;
+  }
+
+</style>

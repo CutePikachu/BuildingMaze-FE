@@ -49,7 +49,7 @@
       var that = this;
       var storage = window.localStorage;
       if (storage["token"]) {
-        axios.put('/v1/identity/' + storage["token"])
+        axios.put('/login/' + storage["token"])
           .then(function(resp) {
             if (resp.data.Success) {
               that.message("Login Automatically. Loading...", "#2E571F");

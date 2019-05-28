@@ -4,7 +4,9 @@ import Home from './views/Home.vue'
 import LoginPage from './views/LoginPage.vue'
 import NewGame from './views/NewGame.vue'
 import Rank from './views/Rank.vue'
-//import Register from './views/Register.vue'
+import Register from './views/Register.vue'
+import ModeChoice from './views/ModeChoice.vue'
+
 
 Vue.use(Router)
 
@@ -39,6 +41,16 @@ export default new Router({
       path: '/rank',
       name: 'Rank',
       component: Rank
+    },
+    {
+      path: '/reg',
+      name: 'Register',
+      component: Register
+    },
+    {
+      path: '/choice',
+      name: 'ModeChoice',
+      component: ModeChoice
     }
   ]
 })

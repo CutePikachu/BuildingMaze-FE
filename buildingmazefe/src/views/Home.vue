@@ -22,7 +22,7 @@ export default {
 <style>
   .home {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #C7F6EC;
   }
 </style>

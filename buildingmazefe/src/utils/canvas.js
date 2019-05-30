@@ -1,12 +1,12 @@
-import utils from './utils'
+function randomIntFromRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 const canvas = document.querySelector('canvas')
-const c = canvas.getContext('2d')
+const c = canvas.getContext("2d")
 
 canvas.width = innerWidth
 canvas.height = innerHeight
-
-const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66']
 
 // Event Listeners
 addEventListener('resize', () => {
@@ -23,7 +23,7 @@ function Star(x, y, radius, color) {
     this.radius = radius
     this.color = color
     this.velocity = {
-        x: utils.randomIntFromRange(-4,4),
+        x: randomIntFromRange(-4,4),
         y: 3
     }
     this.friction = 0.8
@@ -68,8 +68,8 @@ Star.prototype.shatter = function() {
 function MiniStar(x, y, radius, color) {
     Star.call(this, x, y, radius, color)
     this.velocity = {
-        x: utils.randomIntFromRange(-5, 5),
-        y: utils.randomIntFromRange(-15, 15)
+        x: randomIntFromRange(-5, 5),
+        y: randomIntFromRange(-15, 15)
     }
     this.friction = 0.8
     this.gravity = 0.1
@@ -112,10 +112,7 @@ let stars
 let miniStars
 let ticker = 0
 let randomSpawnRate = 75
-function init() {
-    stars = []
-    miniStars = []
-}
+
 
 // Animation Loop
 function animate() {
@@ -140,9 +137,15 @@ function animate() {
     if (ticker % randomSpawnRate == 0) {
         const x = Math.random() * canvas.width
         stars.push(new Star(x, -100, 12, 'white'))
-        randomSpawnRate = utils.randomIntFromRange(75, 100)
+        randomSpawnRate = randomIntFromRange(75, 100)
     }
+}
+
+function init() {
+    stars = []
+    miniStars = []
 }
 
 init()
 animate()
+export { init as default };

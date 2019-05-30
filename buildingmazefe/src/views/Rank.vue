@@ -1,7 +1,6 @@
 <template>
   <div class="Rank">
   	<Topbar />
-  	<canvas></canvas>
   </div>
 </template>
 
@@ -9,11 +8,15 @@
 
 import Topbar from '@/components/Topbar.vue'
 
+
 export default {
 	name: 'Rank',
 	components: {
 		Topbar
-	}
+	},
+  created: function() {
+
+  }
 }
 </script>
 

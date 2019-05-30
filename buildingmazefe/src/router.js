@@ -6,7 +6,7 @@ import NewGame from './views/NewGame.vue'
 import Rank from './views/Rank.vue'
 import Register from './views/Register.vue'
 import ModeChoice from './views/ModeChoice.vue'
-
+import Build from './views/Build.vue'
 
 Vue.use(Router)
 
@@ -51,6 +51,11 @@ export default new Router({
       path: '/choice',
       name: 'ModeChoice',
       component: ModeChoice
+    },
+    {
+      path: '/build',
+      name: 'Build',
+      component: Build
     }
   ]
 })

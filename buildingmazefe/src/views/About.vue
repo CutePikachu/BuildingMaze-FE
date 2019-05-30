@@ -37,7 +37,7 @@ export default {
   .about {
     background-color: #C7F6EC;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     text-align: left;
   }
 

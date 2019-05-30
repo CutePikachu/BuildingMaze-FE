@@ -1,13 +1,13 @@
 <template>
   <div id="bar">
     <div id="nav">
-      <img src="../assets/home.png" height="15" width="15"></img>
+      <img src="../assets/home.png" height="15" width="15">
       <router-link to="/">Home       </router-link>  |
-      <img src="../assets/guide.png" height="15" width="15"></img>
+      <img src="../assets/guide.png" height="15" width="15">
       <router-link to="/about">Guide </router-link>  |
-      <img src="../assets/person.png" height="15" width="15"></img>
+      <img src="../assets/person.png" height="15" width="15">
       <router-link to="/login">Login </router-link>  |
-      <img src="../assets/equalizer.png" height="15" width="15"></img>
+      <img src="../assets/equalizer.png" height="15" width="15">
       <router-link to="/Rank">Rank  </router-link>
     </div>
     <router-view/>

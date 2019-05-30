@@ -10,12 +10,14 @@
   "dependencies": {
     "@material/elevation": "^1.1.0",
     "axios": "^0.18.0",
+    "canvas": "^2.5.0",
     "core-js": "^2.6.5",
     "muse-ui": "^3.0.2",
     "muse-ui-carbon-theme": "^0.1.0",
     "qs-stringify": "^1.1.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vue-swal": "^1.0.0",
     "vuex": "^3.1.1"
   },
   "devDependencies": {

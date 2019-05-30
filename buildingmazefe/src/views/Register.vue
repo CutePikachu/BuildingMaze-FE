@@ -2,7 +2,7 @@
   <div id="Register">
     <div id="home">
       
-      <router-link to="/"><img src="../assets/home.png" height="25" width="25" align="left"></img></router-link>
+      <router-link to="/"><img src="../assets/home.png" height="25" width="25" align="left"></router-link>
     </div>
 
     <h1 class="title">ACCOUNT REGISTRATION</h1>
@@ -32,8 +32,8 @@
                v-model="password"
                clearable/>
         <br><br><br><br>
-        <input placeholder="Tap Anywhere to Create"
-               disabled="disable" 
+        <input placeholder="Create"
+               readonly="true" 
                v-model="tip"
                :style="styleColor"
                class="tap change"/>
@@ -44,19 +44,19 @@
 
 <script>
   export default {
-  	name: 'Register',
+    name: 'Register',
     data () {
       return {
         username: "",
         password: "",
         styleColor: "",
-        tip: "Tap Anywhere to Create",
+        tip: "Create",
         blocked: false,
       }
     },
     methods: {
       register: function() {
-        var that = this;
+        //var that = this;
 
       }
     }

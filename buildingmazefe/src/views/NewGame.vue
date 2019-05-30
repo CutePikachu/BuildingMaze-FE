@@ -1,6 +1,6 @@
 <template>
   <div id="newGame">
-  	<Board code="wwwwwwwwwwwwwwwssssw5swswswwswssswwsssswwwwwsssss0wwwsssswwsswwwws3sswsswwwsssswwswswsssssdswwwwwwse" level="1" />
+  	<Board code="ess3ww3ss4sssswwsssssssswwssss3ss1ww2ss3wwwwwwwwwwwwwwwwwwww3ss2ww4ss3sssswwsssssssswwssss1ss3ww3ssdsssswwsssssssswwsssssssswwsssssss0wwsssssssswwsssssssswwsssssssswwsssssssswwsssssssswwssss0ssswwsssswwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwsss0wwwwwwsssswwwwwwsssswwwwww0ssswwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwsss0ww0ssssssswwsssssssswwssss0ssswwsss0wwwwwwwwwwwwwwwwwwww0ssswwsss0sssswwsssssssswwsssssss0ww0ssssssswwsss0sssswwsssssssswwsssssssswwsssssssswwsssssssswwssssssssww0ssssssswwsssssssswwsssssssswwssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " />
   </div>
 
 </template>
@@ -19,7 +19,7 @@
   #newGame {
     background-color: #e0dad5;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
   }
 
 </style>

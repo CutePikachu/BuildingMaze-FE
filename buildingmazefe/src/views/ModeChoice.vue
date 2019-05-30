@@ -1,10 +1,10 @@
 <template>
   <div id="choice">
     <div class="title">Mode Choice</div>
-    <div class="btn exp"><router-link to="/bm">Explore</router-link></div>
-    <div class="btn bud"><router-link to="/bm">Build  </router-link></div>
-    <div class="btn rul"><router-link to="/bm">Rules  </router-link></div>
-    <div class="btn mor"><router-link to="/bm">More   </router-link></div>
+    <div class="btn exp"><router-link to="/bm"   >Explore</router-link></div>
+    <div class="btn bud"><router-link to="/build">Build  </router-link></div>
+    <div class="btn rul"><router-link to="/bm"   >Rules  </router-link></div>
+    <div class="btn mor"><router-link to="/bm"   >More   </router-link></div>
 
     <router-view/>
   </div>
@@ -20,7 +20,7 @@
 <style scoped>
   #choice {
     background-color: #02231c;
-    height: 100%;
+    height: 100vh;
     color: #02231c;
   }
 

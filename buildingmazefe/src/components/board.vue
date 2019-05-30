@@ -6,69 +6,124 @@
       <div v-for="item in array"
            :key=item>
 
-        <div class = "item w"
-             @click="changeColor(row, item)"
+        <div class = "item"
+             :class = "type[row][item]"
              elevation="20"
-             v-if="type[row][item] === 'w'">
+             @click = "move(row, item)"
+             v-if="type[row][item] === 'w' || type[row][item] === 's' || type[row][item] === 'p'">
           <mu-ripple />
-        </div>
-
-        <div class = "item s"
-             @click="changeColor(row, item)"
-             v-else-if="type[row][item] === 's'">
-          <mu-ripple />  
+            
         </div>
 
         <div class = "item num"
-             @click="changeColor(row, item)"
+             @click = "changeLevel(type[row][item], row, item)"
              v-else-if="type[row][item] <= '9' && type[row][item] >= '0'">
            <mu-ripple >
              {{ type[row][item] }}
            </mu-ripple>
         </div>
 
-        <div class = "item newCol"
-             @click="changeColor(row, item)"
-             v-else>
-          <mu-ripple />   
+        <div class = "item d"
+             elevation="20"
+             @click = "succ"
+             v-if="type[row][item] === 'd'">
+             <img src="../assets/dest.png">
+          <mu-ripple />
+        </div>
+
+        <div class = "item p"
+             elevation="20"
+             v-if="type[row][item] === 'e'">
+          <mu-ripple />
         </div>
       </div>
-      <h3 v-if="row===1" class="lev">You are on level  {{ level }}</h3>
+      <h3 v-if="row===1" class="lev">
+        You are on level  {{ level }} <br>
+        <router-link to="/choice">Back  </router-link>
+      </h3>
     </div>
   </div>
 </template>
 
 <script>
   import Vue from 'vue'
+  import findPath from '../utils/bfs.js'
+
   export default {
     name: 'Board',
-    props: ["code", "level"],
+    props: ["code"],
     data() {
       return {
+        level: -1,
+        player: {
+          x: -1,
+          y: -1
+        } ,
         array : [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9],
-        color : [[], [], [], [], [], [], [], [], [], []],
-        type:   [[], [], [], [], [], [], [], [], [], []],
+        map: [[[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []],
+              [[], [], [], [], [], [], [], [], [], []]],
+        type: [[], [], [], [], [], [], [], [], [], []],
       }
       
     },
     created: function() {
-      for (let i = 0; i < 10; i++) {
-        Vue.set(this.color, i, [true, true, true, false, true, true, true, true, true, true]);
-        for (let j = 0; j < 10; j++) {
-          let index = -1;
-          if (i == 0) index = j;
-          else index = 10 * i + j;
-          this.type[i].push(this.code[index]);
+      for (let lev = 0; lev < 10; lev++) {
+        for (let i = 0; i < 10; i++) {
+          for (let j = 0; j < 10; j++) {
+            let index = -1;
+
+            if (i == 0) index = j;
+            else index = 10 * i + j;
+
+            if (lev != 0) index += 100 * lev;
+            this.map[lev][i].push(this.code[index]);
+          }
         }
       }
+      
+      this.level = 0;
+      this.type = this.map[0];
+      this.player.x = 0;
+      this.player.y = 0;
     },
     methods: {
-      changeColor : function(row, item) {
-        Vue.set(this.color[row], item, !this.color[row][item]);
+      changeLevel: function(lev, x, y) {
+        var reach = findPath(this.type, this.player.x, this.player.y, x, y);
+        if (reach == false) return;
+        if (this.type[this.player.x][this.player.y] == "p" || 
+            this.type[this.player.x][this.player.y] == "e")
+          Vue.set(this.type[this.player.x], this.player.y, "s");  
+        this.level = lev;
+        this.type = this.map[lev];
+        this.player.x = x;
+        this.player.y = y; 
+      },
+      move: function(x, y) {
+        if (this.type[x][y] == "w") return;
+        var reach = findPath(this.type, this.player.x, this.player.y, x, y);
+        if (reach == false) return;
+        if (this.type[this.player.x][this.player.y] == "p"|| 
+            this.type[this.player.x][this.player.y] == "e")
+          Vue.set(this.type[this.player.x], this.player.y, "s");
+        Vue.set(this.type[x], y, "p");
+        this.player.x = x;
+        this.player.y = y;  
+      },
+      succ: function() {
+        this.$swal("Well done!", "next", "success");
       }
+      
     },
     computed: {
-
+      
     }
   }
   
@@ -80,7 +135,7 @@
     align-items: center;
     padding-top: 26px; 
     width: 720px;
-    height: 720px;
+    height: 100%;
   }
   .row {
     display: flex;
@@ -105,6 +160,20 @@
     color: #4e06ad;
   }
 
+  .e {
+    background-color: #c05640;
+  }
+
+  .d {
+    background-color: #edd170;
+
+  }
+
+  .p {
+    background-color: #e0dad5;
+    border-radius: 50% 50% 50% 50%;
+    border: #a79c93 1px solid;
+  }
   .item{
     position: relative;
     width: 72px;

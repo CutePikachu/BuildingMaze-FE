@@ -1,29 +1,28 @@
 <template>
   <div id="bar">
     <div id="nav">
-      <img src="../assets/home.png" height="15" width="15">
-      <router-link to="/">Home       </router-link>  |
-      <img src="../assets/guide.png" height="15" width="15">
-      <router-link to="/about">Guide </router-link>  |
-      <img src="../assets/person.png" height="15" width="15">
-      <router-link to="/login">Login </router-link>  |
-      <img src="../assets/equalizer.png" height="15" width="15">
-      <router-link to="/Rank">Rank  </router-link>
+      <img src="../assets/home.png" height="15" width="15" />
+      <router-link to="/">Home </router-link> |
+      <img src="../assets/guide.png" height="15" width="15" />
+      <router-link to="/about">Guide </router-link> |
+      <img src="../assets/person.png" height="15" width="15" />
+      <router-link to="/login">Login </router-link> |
+      <img src="../assets/equalizer.png" height="15" width="15" />
+      <router-link to="/Rank">Rank </router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'Topbar'
-  }
-
+export default {
+  name: "Topbar"
+};
 </script>
 
 <style scoped>
 #bar {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -31,7 +30,7 @@
 }
 #nav {
   padding: 15px;
-  background-color: #55D9C0;
+  background-color: #55d9c0;
   text-align: right;
 }
 
@@ -41,6 +40,6 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #02231C;
+  color: #02231c;
 }
 </style>

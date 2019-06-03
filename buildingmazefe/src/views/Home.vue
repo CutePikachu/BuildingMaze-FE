@@ -1,8 +1,11 @@
 <template>
   <div class="home">
     <Topbar />
-    <img alt="Vue logo" src="../assets/logo.png" height="100" width="100" />
+    <div class="title">
+      <img alt="Vue logo" src="../assets/logo.png" height="100" width="100" />
     <Welcome msg="Welcome to Building Maze! Enjoy!" />
+    </div>
+    
   </div>
 </template>
 
@@ -24,5 +27,9 @@ export default {
   width: 100%;
   height: 100vh;
   background-color: #c7f6ec;
+}
+
+.title {
+  margin-top: 120px;
 }
 </style>

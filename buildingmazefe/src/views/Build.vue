@@ -32,6 +32,9 @@ export default {
       this.INIT();
     }
   },
+  mounted() {
+    this.init()
+  }
 };
 </script>
 

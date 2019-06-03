@@ -1,7 +1,7 @@
 <template>
   <div align="center">
     <h1>{{ msg }}</h1><br>
-    <mu-button class="mu-ripple" @click="start"> Quick Start</mu-button><br>\
+    <mu-button class="mu-ripple" @click="start"> Start</mu-button><br>
     <router-view/>
   </div>
 </template>
@@ -30,6 +30,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 16px;
+    margin-top: 40px;
     background-color: #fff;
     border-radius: 6px;
     color: #303f9f;

@@ -42,13 +42,9 @@ export default {
 
   methods: {
     ...mapMutations(["CHANGETYPE"]),
-    changeColor: function(row, item) {
-      Vue.set(this.color[row], item, !this.color[row][item]);
-    },
     changeTypes: function(x, y) {
       this.CHANGETYPE(x, y);
       Vue.set(this.board[x], y, this.currType);
-      // console.log(this.currType)
     }
   }
 };

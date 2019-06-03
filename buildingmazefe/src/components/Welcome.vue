@@ -1,9 +1,7 @@
 <template>
   <div align="center">
     <h1>{{ msg }}</h1><br>
-    <mu-button class="mu-ripple" @click="start"> Quick Start</mu-button><br>
-    <mu-button class="mu-ripple" @click="login"> Login  </mu-button><br>
-    <mu-button class="mu-ripple" @click="reg"> Register   </mu-button>
+    <mu-button class="mu-ripple" @click="start"> Quick Start</mu-button><br>\
     <router-view/>
   </div>
 </template>
@@ -15,14 +13,8 @@
       msg: String
     },
     methods: {
-      login: function() {
-        this.$router.push({path:'/login'})
-      },
       start: function() {
         this.$router.push({path:'/choice'})
-      },
-      reg: function() {
-        this.$router.push({path:'/reg'})
       }
     }
   }

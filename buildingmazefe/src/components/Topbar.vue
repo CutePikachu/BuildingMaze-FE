@@ -6,8 +6,6 @@
       <img src="../assets/guide.png" height="15" width="15" />
       <router-link to="/about">Guide </router-link> |
       <img src="../assets/person.png" height="15" width="15" />
-      <router-link to="/login">Login </router-link> |
-      <img src="../assets/equalizer.png" height="15" width="15" />
       <router-link to="/Rank">Rank </router-link>
     </div>
     <router-view />

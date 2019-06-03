@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import LoginPage from './views/LoginPage.vue'
 import NewGame from './views/NewGame.vue'
 import Rank from './views/Rank.vue'
-import Register from './views/Register.vue'
 import ModeChoice from './views/ModeChoice.vue'
 import Build from './views/Build.vue'
 
@@ -28,11 +26,6 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: '/login',
-      name: 'LoginPage',
-      component: LoginPage
-    },
-    {
       path: '/bm',
       name: 'NewGame',
       component: NewGame
@@ -41,11 +34,6 @@ export default new Router({
       path: '/rank',
       name: 'Rank',
       component: Rank
-    },
-    {
-      path: '/reg',
-      name: 'Register',
-      component: Register
     },
     {
       path: '/choice',

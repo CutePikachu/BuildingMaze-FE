@@ -1,5 +1,6 @@
 <template>
   <div id="Board">
+    <div class="succ" :style="win">You win!</div>
     <div class="row" v-for="row in array" :key="row">
       <div v-for="item in array" :key="item">
         <div
@@ -9,8 +10,8 @@
           @click="move(row, item)"
           v-if="
             type[row][item] === 'w' ||
-            type[row][item] === 's' ||
-            type[row][item] === 'p'
+              type[row][item] === 's' ||
+              type[row][item] === 'p'
           "
         >
           <mu-ripple />
@@ -29,7 +30,7 @@
         <div
           class="item d"
           elevation="20"
-          @click="succ"
+          @click="succ(row, item)"
           v-if="type[row][item] === 'd'"
         >
           <img src="../assets/dest.png" />
@@ -75,7 +76,8 @@ export default {
         [[], [], [], [], [], [], [], [], [], []],
         [[], [], [], [], [], [], [], [], [], []]
       ],
-      type: [[], [], [], [], [], [], [], [], [], []]
+      type: [[], [], [], [], [], [], [], [], [], []],
+      win: "display: none"
     };
   },
   created: function() {
@@ -124,11 +126,11 @@ export default {
       this.player.x = x;
       this.player.y = y;
     },
-    succ: function() {
-      this.$swal("Well done!", "next", "success");
+    succ: function(x, y) {
+      var reach = findPath(this.type, this.player.x, this.player.y, x, y);
+      if (reach) this.win = "";
     }
-  },
-  computed: {}
+  }
 };
 </script>
 
@@ -187,5 +189,12 @@ export default {
 
 .lev {
   padding: 40px;
+}
+
+.succ {
+  z-index: 1;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
 }
 </style>

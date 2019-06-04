@@ -104,7 +104,6 @@ export default {
     updateLev: function(lev) {
       this.UPDATELEV(lev);
       for (let i = 0; i < 10; i++) Vue.set(this.choseLev, i, false);
-
       Vue.set(this.choseLev, lev, true);
     }
   }

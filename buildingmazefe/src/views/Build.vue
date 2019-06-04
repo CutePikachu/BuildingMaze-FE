@@ -43,7 +43,7 @@ export default {
 #Build {
   background-color: #3b4b63;
   width: 100vw;
-  height: 100vh;
+  height: 105vh;
   color: #d5d9e0;
 }
 

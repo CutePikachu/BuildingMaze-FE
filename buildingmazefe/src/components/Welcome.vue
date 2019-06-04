@@ -1,7 +1,10 @@
 <template>
   <div align="center">
     <h1>{{ msg }}</h1><br>
-    <mu-button class="mu-ripple" @click="start"> Start</mu-button><br>
+    <mu-button class="mu-ripple" @click="explore"> Explore</mu-button><br>
+    <mu-button class="mu-ripple" @click="build"> Build</mu-button><br>
+    <mu-button class="mu-ripple" @click="rules"> Rules</mu-button><br>
+    <mu-button class="mu-ripple" @click="more"> More</mu-button><br>
     <router-view/>
   </div>
 </template>
@@ -13,9 +16,18 @@
       msg: String
     },
     methods: {
-      start: function() {
-        this.$router.push({path:'/choice'})
-      }
+      explore: function() {
+        this.$router.push({path:'/bm'})
+      },
+      build: function() {
+        this.$router.push({path:'/build'})
+      },
+      rules: function() {
+        this.$router.push({path:'/about'})
+      },
+      more: function() {
+        this.$router.push({path:'/bm'})
+      },
     }
   }
 </script>
@@ -30,7 +42,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 16px;
-    margin-top: 40px;
+    margin-top: 120x;
     background-color: #fff;
     border-radius: 6px;
     color: #303f9f;

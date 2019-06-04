@@ -42,7 +42,7 @@
       </div>
       <h3 v-if="row === 1" class="lev">
         You are on level {{ level }} <br />
-        <router-link to="/choice">Back </router-link>
+        <router-link to="/">Back </router-link>
       </h3>
     </div>
   </div>

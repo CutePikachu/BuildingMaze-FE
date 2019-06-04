@@ -30,6 +30,6 @@ export default {
 }
 
 .title {
-  margin-top: 120px;
+  margin-top: 10px;
 }
 </style>

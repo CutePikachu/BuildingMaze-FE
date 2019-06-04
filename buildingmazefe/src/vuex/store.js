@@ -25,9 +25,9 @@ const store = new Vuex.Store({
     INIT: (state) => {
       for (let lev = 0; lev < 10; lev++) {
         for (let i = 0; i < 10; i++) {
-          Vue.set(state.map[lev], i,["s","s", "s", "s", "s","s","s", "s", "s", "w"]);
+          Vue.set(state.map[lev], i,["s","s", "s", "s", "s","s","s", "s", "s", "s"]);
         }
-        Vue.set(state.board, lev, ["s","s", "s", "s", "s","s","s", "s", "s", "w"]);
+        Vue.set(state.board, lev, ["s","s", "s", "s", "s","s","s", "s", "s", "s"]);
       }
       state.currLev = 0;
       state.currType = "s" ;

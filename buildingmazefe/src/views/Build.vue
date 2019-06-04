@@ -6,8 +6,9 @@
 
     <div class="columnR">
       <Tools />
-      <input class="btn" value="Clear" readonly="true"  @click="init"/>
+      <input class="btn" value="Clear" readonly="true" @click="init" />
       <input class="btn s" value="Submit" readonly="true" />
+      <router-link to="/">Back </router-link>
     </div>
   </div>
 </template>
@@ -33,16 +34,17 @@ export default {
     }
   },
   mounted() {
-    this.init()
+    this.init();
   }
 };
 </script>
 
 <style scoped>
 #Build {
-  background-color: #e0dad5;
+  background-color: #3b4b63;
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
+  color: #d5d9e0;
 }
 
 .columnL {

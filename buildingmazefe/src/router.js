@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import NewGame from './views/NewGame.vue'
 import Rank from './views/Rank.vue'
-import ModeChoice from './views/ModeChoice.vue'
 import Build from './views/Build.vue'
 
 Vue.use(Router)
@@ -34,11 +33,6 @@ export default new Router({
       path: '/rank',
       name: 'Rank',
       component: Rank
-    },
-    {
-      path: '/choice',
-      name: 'ModeChoice',
-      component: ModeChoice
     },
     {
       path: '/build',

@@ -3,11 +3,19 @@
     <div class="row" v-for="row in array" :key="row">
       <div v-for="item in array" :key="item">
         <div
-          class="item"
+          class="item num"
           @click="changeTypes(row, item)"
-          :class="{ newCol: color[row][item] }"
+          v-if="board[row][item] <= 9 && board[row][item] >= 0"
         >
           <mu-ripple> {{ board[row][item] }} </mu-ripple>
+        </div>
+        <div
+          class="item"
+          @click="changeTypes(row, item)"
+          :class="[{ newCol: color[row][item] }, board[row][item] ]"
+          v-else
+        >
+          <mu-ripple />
         </div>
       </div>
     </div>
@@ -52,10 +60,10 @@ export default {
 
 <style scoped>
 #EmptyBoard {
-  background-color: #e0dad5;
+  background-color: #3b4b63;
   align-items: center;
   padding-top: 26px;
-  width: 720px;
+  width: 100%;
   height: 100%;
 }
 .row {
@@ -68,7 +76,7 @@ export default {
 
 .item {
   border: none;
-  background-color: #b9e5f3;
+  background-color: #f9f5ea;
   position: relative;
   width: 72px;
   height: 72px;
@@ -78,6 +86,24 @@ export default {
 }
 
 .newCol {
-  background-color: #51a2d9;
+  background-color: #dbd6cb;
+}
+
+.w {
+  background-color: #3d1d03;
+}
+
+.num {
+  background-color: #ccffcc;
+  font-size: 30px;
+  color: #4e06ad;
+}
+
+.e {
+  background-color: #c05640;
+}
+
+.d {
+  background-color: #edd170;
 }
 </style>
